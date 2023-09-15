@@ -27,10 +27,12 @@ app.get('/publish', async (req, res) => {
     const data = {
         id: id,
         message: `My ID :-${id}`
-    }
+    };
+    console.log(data);
     await publisher.publish('message', JSON.stringify(data))
     res.send({
-        message: "Data published"
+        message: "Data published",
+        data: data,
     })
 })
 
